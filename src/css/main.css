@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+.paint {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 47px);
+}
+
+.leftPanel {
+    background: #c0c0c0;
+    height: 100%;
+    width: 56px;
+}
+
+.canvas {
+    background: #7b7b7b;
+    width: 100%;
+}
+
+canvas {
+    background: #fff;
+}
+
+.bottomPanel {
+    background: #c0c0c0;
+    height: 47px;
+    width: 100%;
+}

@@ -1,40 +1,17 @@
+import { leftPanel } from "./leftPanel.js"
+import { Draw } from "./canvas.js"
+import { BottomPanel } from "./bottomPanel.js"
 
 
+const draw = new Draw()
+const bottomPanel = new BottomPanel()
 
 
-class Draw {
-    constructor() {
+export const paint = document.createElement('div')
+paint.className = 'paint'
+document.body.appendChild(paint)
+paint.appendChild(leftPanel)
+paint.appendChild(draw.dom)
 
-        this.canvas = document.getElementById('canvas')
-        this.ctx = this.canvas.getContext('2d')
-        this.press = false
-        this.initEvents()
-    }
+document.body.appendChild(bottomPanel.dom)
 
-    initEvents() {
-        this.canvas.addEventListener('mousedown', (event) => this.mousedown(event))
-        this.canvas.addEventListener('mouseup', (event) => this.mouseup(event))
-        this.canvas.addEventListener('mousemove', (event) => this.mousemove(event))
-
-    }
-
-    mousedown({ offsetX, offsetY }) {
-        this.press = true
-        this.ctx.beginPath()
-        this.ctx.moveTo(offsetX, offsetY)
-    }
-
-    mouseup() {
-        this.press = false
-        this.ctx.closePath()
-    }
-
-    mousemove({ offsetX, offsetY }) {
-        if (!this.press) return
-        this.ctx.lineTo(offsetX, offsetY)
-        this.ctx.stroke()
-    }
-
-}
-
-new Draw()
