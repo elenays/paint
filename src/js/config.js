@@ -2,7 +2,7 @@ import { events } from "./events.js"
 
 export default new Proxy({
     color: '#000',
-    size: '1px'
+    size: '1px',
 }, {
     set(target, prop, value) {
         target[prop] = value

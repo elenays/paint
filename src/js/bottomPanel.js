@@ -7,9 +7,9 @@ export class BottomPanel {
 
     constructor() {
         this.dom = document.createElement('div')
-        this.dom.className = 'bottomPanel'
+        this.dom.className = 'bottom-panel'
         this.colorPanel = document.createElement('div')
-        this.colorPanel.className = 'colorPanel'
+        this.colorPanel.className = 'color-panel'
         this.dom.appendChild(this.colorPanel)
         this.build()
     }
@@ -19,7 +19,7 @@ export class BottomPanel {
         colorBlock.className = 'color'
         colorBlock.style.background = color
         colorBlock.addEventListener('click', () => {
-            this.select(color)
+            config.color = color
         })
 
         return colorBlock
@@ -35,11 +35,6 @@ export class BottomPanel {
         colors.forEach((color) => {
             this.colorPanel.appendChild(this.buildColor(color))
         })
-    }
-
-    select(color) {
-        config.color = color
-        console.log(config.color)
     }
 
 }

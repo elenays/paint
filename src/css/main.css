@@ -8,7 +8,7 @@ body {
     height: calc(100vh - 47px);
 }
 
-.leftPanel {
+.left-panel {
     background: #c0c0c0;
     height: 100%;
     width: 56px;
@@ -23,7 +23,7 @@ canvas {
     background: #fff;
 }
 
-.bottomPanel {
+.bottom-panel {
     background: #c0c0c0;
     height: 47px;
     width: 100%;
@@ -40,7 +40,7 @@ canvas {
     margin-left: 1px;
 }
 
-.colorPanel {
+.color-panel {
     width: 252px;
     height: 32px;
     display: flex;

@@ -30,9 +30,6 @@ export class Event {
             delete this.list[i]
         }
     }
-
-
-
 }
 
 export const events = new Event()

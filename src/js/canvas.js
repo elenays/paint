@@ -1,5 +1,5 @@
 import { events } from "./events.js"
-
+import config from "./config.js"
 
 
 export class Draw {
@@ -39,6 +39,7 @@ export class Draw {
     mousemove({ offsetX, offsetY }) {
         if (!this.press) return
         this.ctx.lineTo(offsetX, offsetY)
+        this.ctx.lineWidth = config.size
         this.ctx.stroke()
 
 
