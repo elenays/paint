@@ -27,4 +27,23 @@ canvas {
     background: #c0c0c0;
     height: 47px;
     width: 100%;
+    display: flex;
+}
+
+.color {
+    width: 15px;
+    height: 15px;
+    border-top: 1px solid #7B7B7B;
+    border-left: 1px solid #7B7B7B;
+    border-right: 1px solid #BBBBBB;
+    border-bottom: 1px solid #BBBBBB;
+    margin-left: 1px;
+}
+
+.colorPanel {
+    width: 252px;
+    height: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
 }

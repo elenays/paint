@@ -1,3 +1,4 @@
+import { events } from "./events.js"
 
 
 
@@ -20,6 +21,8 @@ export class Draw {
         this.canvas.addEventListener('mousedown', (event) => this.mousedown(event))
         this.canvas.addEventListener('mouseup', (event) => this.mouseup(event))
         this.canvas.addEventListener('mousemove', (event) => this.mousemove(event))
+
+        events.on('change_color', color => this.ctx.strokeStyle = color)
     }
 
     mousedown({ offsetX, offsetY }) {
@@ -37,6 +40,8 @@ export class Draw {
         if (!this.press) return
         this.ctx.lineTo(offsetX, offsetY)
         this.ctx.stroke()
+
+
     }
 
 }
