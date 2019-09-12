@@ -1,5 +1,5 @@
 import { events } from "./events.js"
-import config from "./config.js"
+
 
 
 export class Draw {
@@ -23,6 +23,8 @@ export class Draw {
         this.canvas.addEventListener('mousemove', (event) => this.mousemove(event))
 
         events.on('change_color', color => this.ctx.strokeStyle = color)
+        events.on('change_size', size => this.ctx.lineWidth = size)
+
     }
 
     mousedown({ offsetX, offsetY }) {
@@ -39,7 +41,7 @@ export class Draw {
     mousemove({ offsetX, offsetY }) {
         if (!this.press) return
         this.ctx.lineTo(offsetX, offsetY)
-        this.ctx.lineWidth = config.size
+        this.ctx.lineCap = 'round'
         this.ctx.stroke()
 
 

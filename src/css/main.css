@@ -47,3 +47,18 @@ canvas {
     flex-wrap: wrap;
     margin-top: 5px;
 }
+
+.size-panel {
+     width: 40px;
+     height: 65px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 5px;
+}
+
+.size {
+    width: 15px;
+    height: 15px;
+    background: #000;
+}

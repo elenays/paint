@@ -1,10 +1,13 @@
+import config from "./config.js"
 
 
 export class LeftPanel {
 
     constructor() {
         this.dom = document.createElement('div')
-        this.dom.className = 'leftPanel'
+        this.dom.className = 'left-panel'
+
+        this.buildSize()
     }
 
     buildEraser() {
@@ -23,22 +26,26 @@ export class LeftPanel {
     }
 
     buildSize() {
-        const sizeSmall = document.createElement('div')
-        sizeSmall.className = 'size small'
-        sizeSmall.addEventListener('click', () => {
-            this.setSize(small)
-        })
-        // ─────────────────────────────────────────────────────────────────
-        const sizeBig = document.createElement('div')
-        sizeBig.className = 'size big'
-        // ─────────────────────────────────────────────────────────────────
+
         const sizePanel = document.createElement('div')
         sizePanel.className = 'size-panel'
-        sizePanel.appendChild(sizeSmall)
-        sizePanel.appendChild(sizeBig)
+        this.dom.appendChild(sizePanel)
+
+        const sizeBrush = [1, 5, 10, 30]
+
+        sizeBrush.forEach((size) => {
+            sizePanel.appendChild(this.setSize(size))
+        })
+
     }
 
-    setSize() {
+    setSize(size) {
+        const sizeBlock = document.createElement('div')
+        sizeBlock.className = 'size'
+        sizeBlock.addEventListener('click', () => {
+            config.size = size
+        })
 
+        return sizeBlock
     }
 }
