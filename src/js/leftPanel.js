@@ -1,15 +1,15 @@
 import config from "./config.js"
 
-
 export class LeftPanel {
 
     constructor() {
         this.dom = document.createElement('div')
         this.dom.className = 'left-panel'
-
         this.buildTools()
         this.brush()
         this.buildSize()
+        this.sizePanel.hidden = true
+
     }
 
     buildTools() {
@@ -23,23 +23,8 @@ export class LeftPanel {
         brush.className = 'brush'
         this.tools.appendChild(brush)
         brush.addEventListener('click', () => {
-            this.setSize.hidden = false
+            this.sizePanel.hidden = false
         })
-    }
-
-    buildEraser() {
-        const eraserTool = document.createElement('div')
-        eraserTool.className = 'tool eraser'
-        this.dom.appendChild(eraserTool)
-        eraserTool.addEventListener('click', () => {
-            this.eraserWork()
-        })
-    }
-
-    eraserWork() {
-        const eraser = document.createElement('canvas')
-        this.ctx = eraser.getContext('2d')
-        this.ctx.fillRect(x, y, width, height)
     }
 
     buildSize() {
@@ -51,7 +36,7 @@ export class LeftPanel {
         const sizeBrush = [1, 5, 10, 30]
 
         sizeBrush.forEach((size) => {
-            sizePanel.appendChild(this.setSize(size))
+            this.sizePanel.appendChild(this.setSize(size))
         })
 
     }
@@ -63,11 +48,13 @@ export class LeftPanel {
         sizeBlock.className = 'size'
         sizeBlock.style.width = `${ size + 5 }px`
         sizeBlock.style.height = `${ size + 5 }px`
-        sizeBlock.addEventListener('click', () => {
-            config.size = size
-        })
+        sizeBlock.addEventListener('click', () => config.size = size)
         sizeContainer.appendChild(sizeBlock)
 
         return sizeContainer
     }
+
+
 }
+
+

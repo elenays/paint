@@ -1,5 +1,5 @@
 import { events } from "./events.js"
-
+import { VirtualCanvas } from "./virtualCanvas.js"
 
 
 export class Draw {
@@ -12,6 +12,8 @@ export class Draw {
         this.ctx = this.canvas.getContext('2d')
         this.dom.appendChild(this.canvas)
         this.press = false
+
+        this.virt = new VirtualCanvas(this.ctx)
 
         this.initEvents()
     }
@@ -46,5 +48,4 @@ export class Draw {
 
 
     }
-
 }

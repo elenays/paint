@@ -14,4 +14,3 @@ document.body.appendChild(paint)
 paint.appendChild(leftPanel.dom)
 paint.appendChild(draw.dom)
 document.body.appendChild(bottomPanel.dom)
-
