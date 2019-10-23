@@ -1,4 +1,4 @@
-import config from "./config.js"
+import { tool } from "./config.js"
 
 export class LeftPanel {
 
@@ -8,6 +8,7 @@ export class LeftPanel {
         this.buildTools()
         this.brush()
         this.buildSize()
+
         this.sizePanel.hidden = true
 
     }
@@ -48,7 +49,7 @@ export class LeftPanel {
         sizeBlock.className = 'size'
         sizeBlock.style.width = `${ size + 5 }px`
         sizeBlock.style.height = `${ size + 5 }px`
-        sizeBlock.addEventListener('click', () => config.size = size)
+        sizeBlock.addEventListener('click', () => tool.size = size)
         sizeContainer.appendChild(sizeBlock)
 
         return sizeContainer
@@ -56,5 +57,3 @@ export class LeftPanel {
 
 
 }
-
-
