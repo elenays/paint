@@ -1,4 +1,4 @@
-import config from "./config.js"
+import { tool } from "./config.js"
 
 
 export class BottomPanel {
@@ -18,14 +18,20 @@ export class BottomPanel {
         colorBlock.className = 'color'
         colorBlock.style.background = color
         colorBlock.addEventListener('click', () => {
-            config.color = color
+            tool.color = color
         })
 
         return colorBlock
     }
 
     build() {
+<<<<<<< HEAD
         config.colors.forEach((color) => {
+=======
+
+
+        tool.colors.forEach((color) => {
+>>>>>>> 9bde7f14c7cf4b6759efc696b1cda5adcb859ae6
             this.colorPanel.appendChild(this.buildColor(color))
         })
     }
